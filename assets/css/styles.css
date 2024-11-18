@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+
+
+.container {
+    width: 90%; /* Ajuste da largura do container para ser menor */
+    max-width: 700px; /* Define um tamanho máximo para evitar que fique muito grande */
+    background-color: #131313; /* Fundo escuro */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 50px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fa69c2; /* Roxo Suave */
+    margin-right: 10px;
+    flex: 1 0 auto;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 380;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.counter {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #ECF0F1; /* Cinza claro */
+}
+
+.line {
+    width: 50%;
+    height: 2px;
+    background-color: #ECF0F1; /* Cinza claro */
+    margin: 20px auto;
+}
+
+.juntos {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ECF0F1; /* Cinza claro */
+}
+
+.message {
+    font-size: 1.1rem;
+    color: #fa69c2; /* Roxo suave */
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsividade para celular */
+@media (max-width: 430px) {
+    .container {
+        width: 120%; /* Ajuste da largura do container */
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 2.5rem; /* Ajuste do título para telas pequenas */
+        margin-bottom: 10px;
+    }
+
+    .carousel {
+        width: 100%; /* Ajusta o carrossel para ocupar toda a largura da tela */
+        max-width: none; /* Remove o limite de largura máxima */
+        padding: auto; /* Adiciona um pequeno espaçamento nas laterais */
+    }
+
+    .carousel img {
+        width: 100%; /* As imagens ocuparão toda a largura do carrossel */
+        height: 600px; /* Mantém a proporção das imagens */
+        object-fit: cover; /* Garantir que a imagem preencha o espaço sem distorção */
+    }
+
+    .carousel-images img {
+        width: 100%;
+    }
+
+    /* Separando ano, mês, dia de hora, minutos e segundos */
+    .counter {
+        display: flex;
+        flex-direction: column;  /* Organiza as informações em coluna */
+        font-size: 1.4rem;
+        margin-top: 10px;
+        color: #ECF0F1;
+        text-align: center;
+    }
+
+    /* Estilo adicional para ano, mês, dia */
+    .counter .time-section {
+        margin-bottom: auto;
+    }
+
+    /* Estilo adicional para hora, minuto, segundo */
+    .counter .time-detail {
+        margin-top: 1px;
+        font-size: 1.4rem; /* Tamanho maior para hora/minuto/segundo */
+    }
+
+    .line {
+        width: 50%;
+    }
+
+    .message {
+        font-size: 1.rem;
+        margin-top: 20px;
+    }
+}
+
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: fall 5s infinite linear;
+    opacity: 0;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    left: 15px;
+    top: 0;
+}
+
+/* Animação de queda */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Animar múltiplos corações */
+@keyframes randomize {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 100%;
+    }
+}
