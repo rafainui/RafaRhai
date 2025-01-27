@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function moveCarousel() {
         index++;
-        if (index >= 6) index = 0; // Recomeça o carrossel após a última imagem
+        if (index >= 7) index = 0; // Recomeça o carrossel após a última imagem
         carouselImages.style.transform = `translateX(-${index * 100}%)`;
     }
   
