@@ -202,7 +202,7 @@ body {
 /* Animação de queda */
 @keyframes fall {
     0% {
-        transform: translateY(0) rotate(45deg);
+        transform: translateY(0) rotate(-75deg);
         opacity: 1;
     }
     100% {
